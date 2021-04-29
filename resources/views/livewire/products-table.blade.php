@@ -4,7 +4,7 @@
 
             <div class="relative text-sm w-60 float-left">
                 <label>
-                    <input wire:model="search" type="text" class="border-b border-solid border-gray-200 h-10 w-60 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none" placeholder="Caută produse...">
+                    <input wire:model="search" type="text" class="border-b border-solid border-gray-200 h-10 w-60 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none" placeholder="Search products...">
                 </label>
                 <div class="absolute top-2 right-5"> <i class="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i> </div>
             </div>
@@ -126,7 +126,7 @@
             </div>
 
         @else
-            <p class="text-sm p-4">Nu a fost găsit nici un produs.</p>
+            <p class="text-sm p-4">No products found.</p>
         @endif
 
     <!-- Modal Stergere Produs -->

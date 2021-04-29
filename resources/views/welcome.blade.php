@@ -90,8 +90,9 @@
         </g>
     </g>
 </svg>
-                </div>
 
+                </div>
+<a href="github.com/mvpopuk/livewire-datatable" class="text-gray-500 flex justify-center sm:justify-center pt-4">github.com/mvpopuk/livewire-datatable</a>
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="">
                       
