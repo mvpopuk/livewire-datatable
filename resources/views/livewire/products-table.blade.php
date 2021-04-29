@@ -112,7 +112,7 @@
                         </td>
 
                         <td class="py-3 px-6 text-center">
-                            <button class="font-medium underline" wire:click="edit({{ $product->id }})">Editează</button>
+                            <button class="font-medium underline" wire:click="edit({{ $product->id }})">Edit</button>
                         </td>
                     </tr>
 
@@ -152,11 +152,11 @@
 
     <form wire:submit.prevent="saveProduct">
             <x-modal.dialog wire:model.defer="showEditModal">
-                <x-slot name="title">Catalog Produse</x-slot>
+                <x-slot name="title">Products</x-slot>
 
                 <x-slot name="content">
                     <x-input.group for="title" label="Name" :error="$errors->first('editProduct.name')">
-                        <x-input.text wire:model="editProduct.name" id="title" placeholder="Denumire Produs" />
+                        <x-input.text wire:model="editProduct.name" id="title" placeholder="Product Name" />
                     </x-input.group>
                 </x-slot>
 
