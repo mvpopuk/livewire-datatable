@@ -41,7 +41,7 @@
                 <tr class="bg-gray-100 text-gray-600 uppercase text-xs leading-normal">
                     <th class="text-left px-2 w-5">
                         <label class="text-teal-500 inline-flex justify-between hover:bg-gray-200 px-2 py-2 rounded-lg cursor-pointer">
-                            <input wire:model="selecteazaToataPagina" type="checkbox" class="form-checkbox rowCheckbox focus:outline-none focus:shadow-outline">
+                            <input wire:model="selectPage" type="checkbox" class="form-checkbox rowCheckbox focus:outline-none focus:shadow-outline">
                         </label>
                     </th>
                     <x-table.heading sortable direction="asc" wire:click="sortBy('name')" :direction="$sortField === 'denumire' ? $sortDirection : null" class="py-3 px-6 text-left">Product Name</x-table.heading>
@@ -66,12 +66,12 @@
                         @unless($selectAll)
 
                         <span class="text-xs p4 text-cool-gray-700">You have selected <strong>{{ count($selected) }}</strong> products, do you want to select all <strong>{{ $products->total() }}</strong> ?</span>
-                        <button wire:click="selecteazaTot" class="text-xs text-blue-600 uppercase underline">Select all</button>
+                        <button wire:click="selectAll" class="text-xs text-blue-600 uppercase underline">Select all</button>
 
                         @else
 
                         <span class="text-xs p4 text-cool-gray-700">
-                            You have selected <strong>{{ $produse->total($selected) }}</strong> products.
+                            You have selected <strong>{{ $products->total($selected) }}</strong> products.
                         </span>
 
                         @endif
@@ -129,7 +129,7 @@
             <p class="text-sm p-4">No products found.</p>
         @endif
 
-    <!-- Modal Stergere Produs -->
+    <!-- Delete Modal -->
 
     <form wire:submit.prevent="deleteSelected">
         <x-modal.confirmation wire:model.defer="showDeleteModal">
@@ -142,8 +142,8 @@
             </x-slot>
 
             <x-slot name="footer">
-                <x-button.secondary wire:click="$set('showDeleteModal', false)">Anulează</x-button.secondary>
-                <x-button.danger type="submit">Șterge</x-button.danger>
+                <x-button.secondary wire:click="$set('showDeleteModal', false)">Cancel</x-button.secondary>
+                <x-button.danger type="submit">Delete</x-button.danger>
             </x-slot>
         </x-modal.confirmation>
     </form>
@@ -161,9 +161,9 @@
                 </x-slot>
 
                 <x-slot name="footer">
-                    <x-button.secondary wire:click="$set('showEditModal', false)">Anulează</x-button.secondary>
+                    <x-button.secondary wire:click="$set('showEditModal', false)">Cancel</x-button.secondary>
 
-                    <x-button.primary type="submit">Salvează</x-button.primary>
+                    <x-button.primary type="submit">Save</x-button.primary>
                 </x-slot>
             </x-modal.dialog>
     </form>

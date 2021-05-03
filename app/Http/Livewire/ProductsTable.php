@@ -56,7 +56,7 @@ class ProductsTable extends Component
 
     public function selectPage()
     {
-        $this->selected = $this->produse->pluck('id')->map(fn($id) => (string) $id);
+        $this->selected = $this->products->pluck('id')->map(fn($id) => (string) $id);
     }
 
     /** CRUD **/
@@ -86,6 +86,7 @@ class ProductsTable extends Component
         $products->delete();
         $this->showDeleteModal = false;
         $this->selected = [];
+        $this->edit = Products::make();
     }
 
     public function exportSelected() 
@@ -104,14 +105,14 @@ class ProductsTable extends Component
 
     public function getProductsProperty()
     {
-       return $this->productsQuery->paginate(3);
+       return $this->productsQuery->paginate(5);
     }
 
     /** RENDER **/
 
     public function render()
     {
-        if ($this->selectAll) $this->selected= $this->produse->pluck('id')->map(fn($id) => (string) $id);
+        if ($this->selectAll) $this->selected= $this->products->pluck('id')->map(fn($id) => (string) $id);
 
         return view('livewire.products-table', [
             'products' => $this->products,
