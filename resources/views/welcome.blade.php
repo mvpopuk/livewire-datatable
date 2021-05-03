@@ -110,11 +110,11 @@
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
                         <div class="flex items-center">
-                        
+                        Developed by
                             <a href="https://twitter.com/mvpopuk" class="ml-1 mr-1">
-                                Developed by <strong>@mvpopuk</strong>
+                                <strong>@mvpopuk</strong>
                             </a>
-                             for
+                        for
                             <a href="http://laravelmagazine.com" class="ml-1">
                                 <strong>Laravel Magazine</strong>
                             </a>

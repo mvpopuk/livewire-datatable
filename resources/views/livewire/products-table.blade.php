@@ -15,6 +15,10 @@
             </button>
 
             <div class="float-right mr-2">
+                <x-button.secondary wire:click="$toggle('showModal')" class="flex items-center space-x-2"><x-icon.upload class="text-cool-gray-500"/> <span>Import</span></x-button.secondary>
+            </div>
+
+            <div class="float-right mr-2">
                 <x-dropdown label="Bulk Actions">
                     <x-dropdown.item type="button" wire:click="exportExcelSelectate" class="flex items-center space-x-2">
                         <x-icon.download class="text-cool-gray-400"/> <span>Export (.xlsx)</span>
